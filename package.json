@@ -1,0 +1,24 @@
+{
+  "name": "mha-express-api",
+  "version": "1.0.0",
+  "description": "A My Hero Academia API Using Node and Express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kellydietrich/mha-express-api.git"
+  },
+  "author": "Kelly Dietrich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kellydietrich/mha-express-api/issues"
+  },
+  "homepage": "https://github.com/kellydietrich/mha-express-api#readme",
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
