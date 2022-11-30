@@ -3,9 +3,9 @@ const app = express()
 const cors = require('cors')
 const PORT = 8000
 
-app.use(cors())
+app.use(cors());
 
-let heroes = {
+const heroes = {
     'izuku midoriya': {
         'age': 16,
         'heroName': 'Deku',
@@ -52,15 +52,20 @@ app.get('/', (request, response) => {
     response.sendFile(__dirname + '/index.html')
 })
 
-app.get('/api/:name', (request, response) => {
-    const charName = request.params.name.toLowerCase()
+app.get('/api', (request,response) => {
+    response.json(heroes);
+})
+
+app.get('/api/:charName', (request, response) => {
+    const charName = request.params.charName.toLowerCase();
+    console.log(request.params.charName)
     if(heroes[charName]){
-        response.json(heroes[charName])
+        response.json(heroes[charName]);
     }else{
-        response.json(rappers['unknown'])
+        response.json(heroes['unknown']);
     }
 })
 
 app.listen(process.env.PORT || PORT, () => {
-    console.log(`Server running on port ${PORT}`)
+    console.log(`Server running on port ${PORT}`);
 })
